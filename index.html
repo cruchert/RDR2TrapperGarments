@@ -12,6 +12,9 @@
       --text-color: #333;
       --section-bg: #fff;
       --section-shadow: rgba(0, 0, 0, 0.1);
+      --button-bg: #007BFF;
+      --button-text: #fff;
+      --button-border: #0056b3;
     }
     
     /* Dark mode override using prefers-color-scheme */
@@ -21,6 +24,9 @@
         --text-color: #ddd;
         --section-bg: #333;
         --section-shadow: rgba(0, 0, 0, 0.5);
+        --button-bg: #0056b3;
+        --button-text: #fff;
+        --button-border: #003d80;
       }
     }
     
@@ -57,6 +63,24 @@
       font-weight: normal;
     }
     
+    .toggle-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: var(--button-bg);
+      color: var(--button-text);
+      border: 1px solid var(--button-border);
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
     /* Responsive adjustments for smaller screens */
     @media (max-width: 600px) {
       body {
@@ -68,89 +92,226 @@
       h1, h2, h3 {
         font-size: 1.2em;
       }
+      .toggle-button {
+        font-size: 0.9em;
+      }
     }
   </style>
+  <script>
+    function toggleSection(sectionID) {
+      var sec = document.getElementById(sectionID);
+      if (sec.style.display === "none" || sec.style.display === "") {
+        sec.style.display = "block";
+      } else {
+        sec.style.display = "none";
+      }
+    }
+  </script>
 </head>
 <body>
   <h1>RDR2 Trapper Tracker</h1>
 
-  <!-- Garment Sets Section -->
-  <div class="section">
-    <h2>Garment Sets</h2>
+  <!-- Garment Sets Section with Button Toggle -->
+  <button class="toggle-button" onclick="toggleSection('garmentSets')">Garment Sets</button>
+  <div id="garmentSets" class="section">
     <ul>
       <!-- Bear Hunter Set -->
       <li>
         <label><input type="checkbox"> Bear Hunter Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Legendary Bear Pelt (for Legendary Bear Head Hat)</label></li>
-          <li><label><input type="checkbox"> 1× Legendary Bear Pelt</label> <label><input type="checkbox"> 1× Perfect Bison Pelt</label> (for Legendary Bear Coat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Bear Pelt</label> <label><input type="checkbox"> 1× Perfect Bull Hide</label> (for Legendary Bear Ropers)</li>
-          <li><label><input type="checkbox"> 1× Perfect Boar Pelt</label> <label><input type="checkbox"> 2× Perfect Rabbit Pelts</label> (for Boar Riding Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Bear Pelt (for Legendary Bear Head Hat)</label>
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Bear Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Bison Pelt</label>
+            (for Legendary Bear Coat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Bear Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Bull Hide</label>
+            (for Legendary Bear Ropers)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Boar Pelt</label>
+            <label><input type="checkbox"> 2× Perfect Rabbit Pelts</label>
+            (for Boar Riding Gloves)
+          </li>
         </ul>
       </li>
       <!-- Trophy Buck Set -->
       <li>
         <label><input type="checkbox"> Trophy Buck Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Raccoon Pelt</label> <label><input type="checkbox"> 1× Perfect Beaver Pelt</label> <label><input type="checkbox"> 2× Hawk Feathers</label> (for Raccoon Mountain Hat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Buck Pelt</label> <label><input type="checkbox"> 1× Perfect Ram Hide</label> (for Legendary Buck Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Elk Pelt</label> <label><input type="checkbox"> 1× Legendary Fox Pelt</label> (for Legendary Fox Moccasins)</li>
-          <li><label><input type="checkbox"> 1× Legendary Buck Pelt</label> <label><input type="checkbox"> 1× Legendary Fox Pelt</label> (for Legendary Buck and Fox Range Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Raccoon Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Beaver Pelt</label>
+            <label><input type="checkbox"> 2× Hawk Feathers</label>
+            (for Raccoon Mountain Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Buck Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Ram Hide</label>
+            (for Legendary Buck Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Elk Pelt</label>
+            <label><input type="checkbox"> 1× Legendary Fox Pelt</label>
+            (for Legendary Fox Moccasins)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Buck Pelt</label>
+            <label><input type="checkbox"> 1× Legendary Fox Pelt</label>
+            (for Legendary Buck and Fox Range Gloves)
+          </li>
         </ul>
       </li>
       <!-- Dreamcatcher Set -->
       <li>
         <label><input type="checkbox"> Dreamcatcher Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Legendary Beaver Pelt</label> <label><input type="checkbox"> 1× Legendary Boar Pelt</label> <label><input type="checkbox"> 1× Cardinal Feather</label> (for Legendary Beaver Flop Hat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Tatanka Bison Pelt</label> (for Legendary Bison Best)</li>
-          <li><label><input type="checkbox"> 1× Legendary Tatanka Bison Pelt</label> (for Legendary Bison Batwing Chaps)</li>
-          <li><label><input type="checkbox"> 1× Legendary Boar Pelt</label> <label><input type="checkbox"> 1× Legendary Tatanka Bison Pelt</label> (for Legendary Boar and Bison Fowlers)</li>
-          <li><label><input type="checkbox"> 1× Legendary Beaver Pelt</label> (for Legendary Beaver Cavalry Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Beaver Pelt</label>
+            <label><input type="checkbox"> 1× Legendary Boar Pelt</label>
+            <label><input type="checkbox"> 1× Cardinal Feather</label>
+            (for Legendary Beaver Flop Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Tatanka Bison Pelt</label>
+            (for Legendary Bison Best)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Tatanka Bison Pelt</label>
+            (for Legendary Bison Batwing Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Boar Pelt</label>
+            <label><input type="checkbox"> 1× Legendary Tatanka Bison Pelt</label>
+            (for Legendary Boar and Bison Fowlers)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Beaver Pelt</label>
+            (for Legendary Beaver Cavalry Gloves)
+          </li>
         </ul>
       </li>
       <!-- Beast of Prey Set -->
       <li>
         <label><input type="checkbox"> Beast of Prey Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Legendary Cougar Pelt</label> <label><input type="checkbox"> 2× Turkey Feathers</label> (for Legendary Cougar Flop Hat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Cougar Pelt</label> <label><input type="checkbox"> 1× Legendary Wolf Pelt</label> (for Legendary Cougar and Wolf Vest)</li>
-          <li><label><input type="checkbox"> 1× Legendary Wolf Pelt</label> <label><input type="checkbox"> 1× Perfect Goat Hide</label> (for Legendary Wolf Batwing Chaps)</li>
-          <li><label><input type="checkbox"> 1× Perfect Boar Pelt</label> <label><input type="checkbox"> 1× Perfect Bull Hide</label> (for Bull Fowler Boots)</li>
-          <li><label><input type="checkbox"> 1× Legendary Cougar Pelt</label> <label><input type="checkbox"> 1× Perfect Boar Pelt</label> (for Legendary Cougar Riding Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Cougar Pelt</label>
+            <label><input type="checkbox"> 2× Turkey Feathers</label>
+            (for Legendary Cougar Flop Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Cougar Pelt</label>
+            <label><input type="checkbox"> 1× Legendary Wolf Pelt</label>
+            (for Legendary Cougar and Wolf Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Wolf Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Goat Hide</label>
+            (for Legendary Wolf Batwing Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Boar Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Bull Hide</label>
+            (for Bull Fowler Boots)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Cougar Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Boar Pelt</label>
+            (for Legendary Cougar Riding Gloves)
+          </li>
         </ul>
       </li>
       <!-- Huntsman Set -->
       <li>
         <label><input type="checkbox"> Huntsman Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Legendary Coyote Pelt</label> <label><input type="checkbox"> 2× Eagle Feathers</label> (for Legendary Coyote Mountain Hat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Pronghorn Hide</label> <label><input type="checkbox"> 1× Perfect Moose Pelt</label> (for Legendary Pronghorn Coat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Coyote Pelt</label> <label><input type="checkbox"> 2× Perfect Fox Pelts</label> (for Legendary Coyote Half Chaps)</li>
-          <li><label><input type="checkbox"> 1× Perfect Cow Hide</label> <label><input type="checkbox"> 1× Perfect Goat Hide</label> (for Workman's Pride Boots)</li>
-          <li><label><input type="checkbox"> 1× Legendary Pronghorn Hide</label> <label><input type="checkbox"> 1× Perfect Muskrat Pelt</label> (for Legendary Pronghorn Range Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Coyote Pelt</label>
+            <label><input type="checkbox"> 2× Eagle Feathers</label>
+            (for Legendary Coyote Mountain Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Pronghorn Hide</label>
+            <label><input type="checkbox"> 1× Perfect Moose Pelt</label>
+            (for Legendary Pronghorn Coat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Coyote Pelt</label>
+            <label><input type="checkbox"> 2× Perfect Fox Pelts</label>
+            (for Legendary Coyote Half Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Cow Hide</label>
+            <label><input type="checkbox"> 1× Perfect Goat Hide</label>
+            (for Workman's Pride Boots)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Pronghorn Hide</label>
+            <label><input type="checkbox"> 1× Perfect Muskrat Pelt</label>
+            (for Legendary Pronghorn Range Gloves)
+          </li>
         </ul>
       </li>
       <!-- Death Roll Set -->
       <li>
         <label><input type="checkbox"> Death Roll Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Legendary Alligator Skin</label> <label><input type="checkbox"> 2× Perfect Snake Skins</label> (for Legendary Alligator Gambler's Hat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Panther Pelt</label> (for Legendary Panther Cloak)</li>
-          <li><label><input type="checkbox"> 1× Legendary Alligator Skin</label> (for Legendary Alligator Vest)</li>
-          <li><label><input type="checkbox"> 1× Legendary Alligator Skin</label> (for Legendary Alligator Fowler's)</li>
-          <li><label><input type="checkbox"> 1× Legendary Panther Pelt</label> <label><input type="checkbox"> 1× Perfect Gila Monster Skin</label> (for Legendary Panther Range Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Alligator Skin</label>
+            <label><input type="checkbox"> 2× Perfect Snake Skins</label>
+            (for Legendary Alligator Gambler's Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Panther Pelt</label>
+            (for Legendary Panther Cloak)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Alligator Skin</label>
+            (for Legendary Alligator Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Alligator Skin</label>
+            (for Legendary Alligator Fowler's)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Panther Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Gila Monster Skin</label>
+            (for Legendary Panther Range Gloves)
+          </li>
         </ul>
       </li>
       <!-- Stalker Set -->
       <li>
         <label><input type="checkbox"> Stalker Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Legendary Ram Hide</label> (for Legendary Ram Hat)</li>
-          <li><label><input type="checkbox"> 1× Legendary Moose Pelt</label> <label><input type="checkbox"> 1× Perfect Wolf Pelt</label> (for Legendary Moose Hunting Jacket)</li>
-          <li><label><input type="checkbox"> 1× Legendary Ram Hide</label> (for Legendary Ram Batwing Chaps)</li>
-          <li><label><input type="checkbox"> 1× Legendary Moose Pelt</label> <label><input type="checkbox"> 1× Perfect Cow Hide</label> (for Legendary Moose Moccasins)</li>
-          <li><label><input type="checkbox"> 1× Legendary Ram Hide</label> <label><input type="checkbox"> 1× Perfect Boar Pelt</label> (for Legendary Ram Rifleman Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Ram Hide</label>
+            (for Legendary Ram Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Moose Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Wolf Pelt</label>
+            (for Legendary Moose Hunting Jacket)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Ram Hide</label>
+            (for Legendary Ram Batwing Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Moose Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Cow Hide</label>
+            (for Legendary Moose Moccasins)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Legendary Ram Hide</label>
+            <label><input type="checkbox"> 1× Perfect Boar Pelt</label>
+            (for Legendary Ram Rifleman Gloves)
+          </li>
         </ul>
       </li>
       <!-- Ghost Bison Set -->
@@ -168,432 +329,571 @@
       <li>
         <label><input type="checkbox"> Rattler Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Ram Hide</label> (for Ram Sombrero)</li>
-          <li><label><input type="checkbox"> 1× Perfect Pronghorn Hide</label> (for Outdoorsman Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Colored Peccary Pig Pelt</label> <label><input type="checkbox"> 1× Perfect Snakeskin</label> (for Javelina Half-Caps)</li>
-          <li><label><input type="checkbox"> 1× Perfect Colored Peccary Pig Pelt</label> <label><input type="checkbox"> 1× Perfect Iguana Skin</label> (for Iguana Range Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Ram Hide</label>
+            (for Ram Sombrero)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Pronghorn Hide</label>
+            (for Outdoorsman Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Colored Peccary Pig Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Snakeskin</label>
+            (for Javelina Half-Caps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Colored Peccary Pig Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Iguana Skin</label>
+            (for Iguana Range Gloves)
+          </li>
         </ul>
       </li>
       <!-- Wrangler Set -->
       <li>
         <label><input type="checkbox"> Wrangler Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Pronghorn Hide</label> <label><input type="checkbox"> 1× Perfect Goat Hide</label> (for Goat Flop Hat)</li>
-          <li><label><input type="checkbox"> 1× Perfect Sheep Hide</label> (for Trapper's Cloak)</li>
-          <li><label><input type="checkbox"> 1× Perfect Panther Pelt</label> <label><input type="checkbox"> 1× Perfect Goat Hide</label> (for No Man's Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Buck Pelt</label> (for Two-Toned Moccasins)</li>
-          <li><label><input type="checkbox"> 1× Perfect Moose Pelt</label> (for Moose Range Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Pronghorn Hide</label>
+            <label><input type="checkbox"> 1× Perfect Goat Hide</label>
+            (for Goat Flop Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Sheep Hide</label>
+            (for Trapper's Cloak)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Panther Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Goat Hide</label>
+            (for No Man's Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Buck Pelt</label>
+            (for Two-Toned Moccasins)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Moose Pelt</label>
+            (for Moose Range Gloves)
+          </li>
         </ul>
       </li>
       <!-- Bronco Buster Set -->
       <li>
         <label><input type="checkbox"> Bronco Buster Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Elk Pelt</label> (for Elk Flop Hat)</li>
-          <li><label><input type="checkbox"> 1× Perfect Ox Hide</label> <label><input type="checkbox"> 1× Perfect Coyote Pelt</label> (for Coyote Scout Jacket)</li>
-          <li><label><input type="checkbox"> 1× Perfect Sheep Hide</label> <label><input type="checkbox"> 1× Perfect Deer Pelt</label> (for Huntsman Vest)</li>
-          <li><label><input type="checkbox"> 2× Perfect Boar Pelts</label> (for Boar Fringe Shotgun Chaps)</li>
-          <li><label><input type="checkbox"> 1× Perfect Pig Hide</label> (for Pigskin Rifleman Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Elk Pelt</label>
+            (for Elk Flop Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Ox Hide</label>
+            <label><input type="checkbox"> 1× Perfect Coyote Pelt</label>
+            (for Coyote Scout Jacket)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Sheep Hide</label>
+            <label><input type="checkbox"> 1× Perfect Deer Pelt</label>
+            (for Huntsman Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 2× Perfect Boar Pelts</label>
+            (for Boar Fringe Shotgun Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Pig Hide</label>
+            (for Pigskin Rifleman Gloves)
+          </li>
         </ul>
       </li>
       <!-- Marauder Set -->
       <li>
         <label><input type="checkbox"> Marauder Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 4× Perfect Rabbit Pelts</label> <label><input type="checkbox"> 1× Perfect Muskrat Pelt</label> (for Muskrat Cavalry Hat)</li>
-          <li><label><input type="checkbox"> 1× Perfect Cow Hide</label> <label><input type="checkbox"> 1× Perfect Deer Pelt</label> (for Principal Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Bull Hide</label> (for Bull Fringed Shotgun Chaps)</li>
-          <li><label><input type="checkbox"> 1× Perfect Boar Pelt</label> <label><input type="checkbox"> 1× Perfect Snakeskin</label> (for Snakeskin Cavalry Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 4× Perfect Rabbit Pelts</label>
+            <label><input type="checkbox"> 1× Perfect Muskrat Pelt</label>
+            (for Muskrat Cavalry Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Cow Hide</label>
+            <label><input type="checkbox"> 1× Perfect Deer Pelt</label>
+            (for Principal Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Bull Hide</label>
+            (for Bull Fringed Shotgun Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Boar Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Snakeskin</label>
+            (for Snakeskin Cavalry Gloves)
+          </li>
         </ul>
       </li>
       <!-- Bounty Hunter Set -->
       <li>
         <label><input type="checkbox"> Bounty Hunter Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Bison Pelt</label> (for Plantation Slough Cat)</li>
-          <li><label><input type="checkbox"> 1× Perfect Cow Hide</label> <label><input type="checkbox"> 2× Perfect Beaver Pelts</label> (for Beaver Hunting Jacket)</li>
-          <li><label><input type="checkbox"> 2× Perfect Sheep Hides</label> (for Sheepskin Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Pronghorn Hide</label> (for Pronghorn Half Chaps)</li>
-          <li><label><input type="checkbox"> 1× Perfect Buck Pelt</label> (for Buck Riding Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Bison Pelt</label>
+            (for Plantation Slough Cat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Cow Hide</label>
+            <label><input type="checkbox"> 2× Perfect Beaver Pelts</label>
+            (for Beaver Hunting Jacket)
+          </li>
+          <li>
+            <label><input type="checkbox"> 2× Perfect Sheep Hides</label>
+            (for Sheepskin Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Pronghorn Hide</label>
+            (for Pronghorn Half Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Buck Pelt</label>
+            (for Buck Riding Gloves)
+          </li>
         </ul>
       </li>
       <!-- Desperado Set -->
       <li>
         <label><input type="checkbox"> Desperado Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 2× Perfect Beaver Pelts</label> (for Beaver Drifter Hat)</li>
-          <li><label><input type="checkbox"> 1× Perfect Ram Hide</label> <label><input type="checkbox"> 1× Perfect Wolf Pelt</label> (for Wolf Coat)</li>
-          <li><label><input type="checkbox"> 2× Perfect Armadillo Skins</label> <label><input type="checkbox"> 1× Perfect Goat Hide</label> (for Billy Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Ox Hide</label> <label><input type="checkbox"> 1× Perfect Boar Pelt</label> (for Boar and Bull Fowler Boots)</li>
-          <li><label><input type="checkbox"> 1× Perfect Rabbit Pelt</label> <label><input type="checkbox"> 2× Perfect Muskrat Pelts</label> (for Winter Cavalry Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 2× Perfect Beaver Pelts</label>
+            (for Beaver Drifter Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Ram Hide</label>
+            <label><input type="checkbox"> 1× Perfect Wolf Pelt</label>
+            (for Wolf Coat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 2× Perfect Armadillo Skins</label>
+            <label><input type="checkbox"> 1× Perfect Goat Hide</label>
+            (for Billy Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Ox Hide</label>
+            <label><input type="checkbox"> 1× Perfect Boar Pelt</label>
+            (for Boar and Bull Fowler Boots)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Rabbit Pelt</label>
+            <label><input type="checkbox"> 2× Perfect Muskrat Pelts</label>
+            (for Winter Cavalry Gloves)
+          </li>
         </ul>
       </li>
       <!-- Night Wrangler Set -->
       <li>
         <label><input type="checkbox"> Night Wrangler Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 2× Perfect Coyote Pelts</label> (for Coyote Gambler's Hat)</li>
-          <li><label><input type="checkbox"> 2× Perfect Cougar Pelts</label> <label><input type="checkbox"> 1× Perfect Black Bear Pelt</label> (for Cougar Cutaway Coat)</li>
-          <li><label><input type="checkbox"> 1× Perfect Wolf Pelt</label> <label><input type="checkbox"> 1× Perfect Panther Pelt</label> (for Wilderness Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Moose Pelt</label> (for Moose Half Chaps)</li>
-          <li><label><input type="checkbox"> 1× Perfect Badger Pelt</label> (for Badger Rifleman Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 2× Perfect Coyote Pelts</label>
+            (for Coyote Gambler's Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 2× Perfect Cougar Pelts</label>
+            <label><input type="checkbox"> 1× Perfect Black Bear Pelt</label>
+            (for Cougar Cutaway Coat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Wolf Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Panther Pelt</label>
+            (for Wilderness Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Moose Pelt</label>
+            (for Moose Half Chaps)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Badger Pelt</label>
+            (for Badger Rifleman Gloves)
+          </li>
         </ul>
       </li>
       <!-- Mountain Man Set -->
       <li>
         <label><input type="checkbox"> Mountain Man Set</label>
         <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Muskrat Pelt</label> <label><input type="checkbox"> 1× Perfect Beaver Pelt</label> (for Grenadier Hat)</li>
-          <li><label><input type="checkbox"> 2× Perfect Ram Hides</label> (for Ram's Shotgun Coat)</li>
-          <li><label><input type="checkbox"> 1× Perfect Buck Pelt</label> <label><input type="checkbox"> 1× Perfect Beaver Pelt</label> (for Country Vest)</li>
-          <li><label><input type="checkbox"> 1× Perfect Elk Pelt</label> (for Elk Riding Gloves)</li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Muskrat Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Beaver Pelt</label>
+            (for Grenadier Hat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 2× Perfect Ram Hides</label>
+            (for Ram's Shotgun Coat)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Buck Pelt</label>
+            <label><input type="checkbox"> 1× Perfect Beaver Pelt</label>
+            (for Country Vest)
+          </li>
+          <li>
+            <label><input type="checkbox"> 1× Perfect Elk Pelt</label>
+            (for Elk Riding Gloves)
+          </li>
         </ul>
       </li>
     </ul>
   </div>
 
-  <!-- Individual Clothing Items -->
-  <div class="section">
-    <h2>Individual Clothing Items</h2>
+  <!-- Individual Clothing Items Section with Toggle Buttons -->
+  <button class="toggle-button" onclick="toggleSection('individualItems')">Individual Clothing Items</button>
+  <div id="individualItems" class="section">
     
     <!-- Hats -->
-    <h3>Hats (26)</h3>
-    <ul>
-      <li>
-        <label><input type="checkbox"> Badger Mountain Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Badger Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Beaver Mountain Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Beaver Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Fox Mountain Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Fox Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Skunk Mountain Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Skunk Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Bear Grenadier Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Black Bear Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Squirrel Flat Cap</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 6× Perfect Squirrel Pelts</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Rat Flat Cap</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 10× Perfect Rat Pelts</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Snake Bulldogger Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Sheep Hide</label></li>
-          <li><label><input type="checkbox"> 1× Perfect Snake Skin</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Iguana Big Valley Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Cow Hide</label></li>
-          <li><label><input type="checkbox"> 1× Perfect Iguana Skin</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Gila Monster Gambler's Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Elk Pelt</label></li>
-          <li><label><input type="checkbox"> 1× Perfect Gila Monster Skin</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Pronghorn Flop Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Pronghorn Hide</label></li>
-          <li><label><input type="checkbox"> 1× Perfect Opossum Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Deer Cavalry Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Deer Pelt</label></li>
-          <li><label><input type="checkbox"> 10× Raven Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Bison Gambler's Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Bison Pelt</label></li>
-          <li><label><input type="checkbox"> 4× Robin Feathers</label></li>
-          <li><label><input type="checkbox"> 4× Oriole Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Rat Infantry Hardy Hat</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Goat Hide</label></li>
-          <li><label><input type="checkbox"> 6× Perfect Rat Pelts</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Stalker Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 2× Loon Feathers</label></li>
-          <li><label><input type="checkbox"> 1× Condor Feather</label></li>
-          <li><label><input type="checkbox"> 3× Raven Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Scavenger Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Vulture Feather</label></li>
-          <li><label><input type="checkbox"> 1× Seagull Feather</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Native Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Pheasant Feather</label></li>
-          <li><label><input type="checkbox"> 4× Sparrow Feathers</label></li>
-          <li><label><input type="checkbox"> 3× Robin Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Pilgrim Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Turkey Feather</label></li>
-          <li><label><input type="checkbox"> 2× Cedar Waxwing Feathers</label></li>
-          <li><label><input type="checkbox"> 3× Blue Jay Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Huntsman Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Boar Pelt</label></li>
-          <li><label><input type="checkbox"> 1× Hawk Feather</label></li>
-          <li><label><input type="checkbox"> 2× Quail Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Pioneer Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 3× Turkey Feathers</label></li>
-          <li><label><input type="checkbox"> 3× Duck Feathers</label></li>
-          <li><label><input type="checkbox"> 3× Chicken Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Rococo Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 2× Crow Feathers</label></li>
-          <li><label><input type="checkbox"> 2× Cardinal Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Glorious Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Oriole Feather</label></li>
-          <li><label><input type="checkbox"> 4× Woodpecker Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Pursuer Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 2× Eagle Feathers</label></li>
-          <li><label><input type="checkbox"> 2× Pigeon Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Majestic Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 4× Rooster Feathers</label></li>
-          <li><label><input type="checkbox"> 2× Woodpecker Feathers</label></li>
-          <li><label><input type="checkbox"> 2× Songbird Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Homestead Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Chicken Feather</label></li>
-          <li><label><input type="checkbox"> 2× Goose Feathers</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Judicious Accessory</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Pheasant Feather</label></li>
-          <li><label><input type="checkbox"> 1× Owl Feather</label></li>
-        </ul>
-      </li>
-    </ul>
-
+    <button class="toggle-button" onclick="toggleSection('hats')">Hats (26)</button>
+    <div id="hats">
+      <ul>
+        <li>
+          <label><input type="checkbox"> Badger Mountain Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Badger Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Beaver Mountain Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Beaver Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Fox Mountain Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Fox Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Skunk Mountain Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Skunk Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Bear Grenadier Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Black Bear Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Squirrel Flat Cap</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 6× Perfect Squirrel Pelts</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Rat Flat Cap</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 10× Perfect Rat Pelts</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Snake Bulldogger Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Sheep Hide</label></li>
+            <li><label><input type="checkbox"> 1× Perfect Snake Skin</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Iguana Big Valley Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Cow Hide</label></li>
+            <li><label><input type="checkbox"> 1× Perfect Iguana Skin</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Gila Monster Gambler's Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Elk Pelt</label></li>
+            <li><label><input type="checkbox"> 1× Perfect Gila Monster Skin</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Pronghorn Flop Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Pronghorn Hide</label></li>
+            <li><label><input type="checkbox"> 1× Perfect Opossum Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Deer Cavalry Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Deer Pelt</label></li>
+            <li><label><input type="checkbox"> 10× Raven Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Bison Gambler's Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Bison Pelt</label></li>
+            <li><label><input type="checkbox"> 4× Robin Feathers</label></li>
+            <li><label><input type="checkbox"> 4× Oriole Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Rat Infantry Hardy Hat</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Goat Hide</label></li>
+            <li><label><input type="checkbox"> 6× Perfect Rat Pelts</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Stalker Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 2× Loon Feathers</label></li>
+            <li><label><input type="checkbox"> 1× Condor Feather</label></li>
+            <li><label><input type="checkbox"> 3× Raven Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Scavenger Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Vulture Feather</label></li>
+            <li><label><input type="checkbox"> 1× Seagull Feather</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Native Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Pheasant Feather</label></li>
+            <li><label><input type="checkbox"> 4× Sparrow Feathers</label></li>
+            <li><label><input type="checkbox"> 3× Robin Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Pilgrim Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Turkey Feather</label></li>
+            <li><label><input type="checkbox"> 2× Cedar Waxwing Feathers</label></li>
+            <li><label><input type="checkbox"> 3× Blue Jay Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Huntsman Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Boar Pelt</label></li>
+            <li><label><input type="checkbox"> 1× Hawk Feather</label></li>
+            <li><label><input type="checkbox"> 2× Quail Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Pioneer Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 3× Turkey Feathers</label></li>
+            <li><label><input type="checkbox"> 3× Duck Feathers</label></li>
+            <li><label><input type="checkbox"> 3× Chicken Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Rococo Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 2× Crow Feathers</label></li>
+            <li><label><input type="checkbox"> 2× Cardinal Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Glorious Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Oriole Feather</label></li>
+            <li><label><input type="checkbox"> 4× Woodpecker Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Pursuer Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 2× Eagle Feathers</label></li>
+            <li><label><input type="checkbox"> 2× Pigeon Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Majestic Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 4× Rooster Feathers</label></li>
+            <li><label><input type="checkbox"> 2× Woodpecker Feathers</label></li>
+            <li><label><input type="checkbox"> 2× Songbird Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Homestead Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Chicken Feather</label></li>
+            <li><label><input type="checkbox"> 2× Goose Feathers</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Judicious Accessory</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Pheasant Feather</label></li>
+            <li><label><input type="checkbox"> 1× Owl Feather</label></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
     <!-- Vests -->
-    <h3>Vests (3)</h3>
-    <ul>
-      <li>
-        <label><input type="checkbox"> Rugged Wrangler Vest</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Pig Hide</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Hinterland Vest</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Ram Hide</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Rusted Vest</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Cougar Pelt</label></li>
-        </ul>
-      </li>
-    </ul>
-
+    <button class="toggle-button" onclick="toggleSection('vests')">Vests (3)</button>
+    <div id="vests">
+      <ul>
+        <li>
+          <label><input type="checkbox"> Rugged Wrangler Vest</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Pig Hide</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Hinterland Vest</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Ram Hide</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Rusted Vest</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Cougar Pelt</label></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
     <!-- Chaps -->
-    <h3>Chaps (9)</h3>
-    <ul>
-      <li>
-        <label><input type="checkbox"> Bear Batwing Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Bear Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Ox Fringed Shotgun Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Ox Hide</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Elk Fringed Shotgun Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Elk Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Moose Batwing Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Moose Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Deer Batwing Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Deer Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Bear-fringed Shotgun Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Black Bear Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Sheep Batwing Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 2× Perfect Sheep Hides</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Muskrat Half Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 2× Perfect Muskrat Pelts</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Deer Pelt Half Chaps</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Deer Pelt</label></li>
-        </ul>
-      </li>
-    </ul>
-
+    <button class="toggle-button" onclick="toggleSection('chaps')">Chaps (9)</button>
+    <div id="chaps">
+      <ul>
+        <li>
+          <label><input type="checkbox"> Bear Batwing Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Bear Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Ox Fringed Shotgun Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Ox Hide</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Elk Fringed Shotgun Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Elk Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Moose Batwing Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Moose Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Deer Batwing Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Deer Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Bear-fringed Shotgun Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Black Bear Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Sheep Batwing Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 2× Perfect Sheep Hides</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Muskrat Half Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 2× Perfect Muskrat Pelts</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Deer Pelt Half Chaps</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Deer Pelt</label></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
     <!-- Boots -->
-    <h3>Boots (3)</h3>
-    <ul>
-      <li>
-        <label><input type="checkbox"> Javelina Moccasins</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 2× Perfect Colored Peccary Pig Pelts</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Skunk Trapper Boots</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 2× Perfect Skunk Pelts</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Moccasins</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Buck Pelt</label></li>
-        </ul>
-      </li>
-    </ul>
-
+    <button class="toggle-button" onclick="toggleSection('boots')">Boots (3)</button>
+    <div id="boots">
+      <ul>
+        <li>
+          <label><input type="checkbox"> Javelina Moccasins</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 2× Perfect Colored Peccary Pig Pelts</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Skunk Trapper Boots</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 2× Perfect Skunk Pelts</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Moccasins</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Buck Pelt</label></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
     <!-- Saddles -->
-    <h3>Saddles (7)</h3>
-    <ul>
-      <li>
-        <label><input type="checkbox"> Rattlesnake Vaquero Saddle</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 10× Perfect Snakeskins</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Cougar McClellan Saddle</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Cougar Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Boar Mother Hubbard Saddle</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Boar Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Alligator Ranch Cutter Saddle</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Alligator Skin</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Bear Dakota Saddle</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Bear Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Beaver Roping Saddle</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Beaver Pelt</label></li>
-        </ul>
-      </li>
-      <li>
-        <label><input type="checkbox"> Panther Trail Saddle</label>
-        <ul class="details">
-          <li><label><input type="checkbox"> 1× Perfect Panther Pelt</label></li>
-        </ul>
-      </li>
-    </ul>
+    <button class="toggle-button" onclick="toggleSection('saddles')">Saddles (7)</button>
+    <div id="saddles">
+      <ul>
+        <li>
+          <label><input type="checkbox"> Rattlesnake Vaquero Saddle</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 10× Perfect Snakeskins</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Cougar McClellan Saddle</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Cougar Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Boar Mother Hubbard Saddle</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Boar Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Alligator Ranch Cutter Saddle</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Alligator Skin</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Bear Dakota Saddle</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Bear Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Beaver Roping Saddle</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Beaver Pelt</label></li>
+          </ul>
+        </li>
+        <li>
+          <label><input type="checkbox"> Panther Trail Saddle</label>
+          <ul class="details">
+            <li><label><input type="checkbox"> 1× Perfect Panther Pelt</label></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
   
 </body>
