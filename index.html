@@ -66,11 +66,12 @@
     .item-label input[type="checkbox"] {
       margin-right: 5px;
     }
+    /* Strikethrough text when checkbox is checked */
     .item-label input[type="checkbox"]:checked + span {
       text-decoration: line-through;
     }
     
-    /* Smaller Lighter Blue Gradient Toggle Buttons with Black Text using Roboto */
+    /* Smaller Lighter Blue Gradient Toggle Buttons with Black Text */
     .toggle-button {
       display: inline-block;
       background: var(--button-bg);
@@ -122,320 +123,1010 @@
 </head>
 <body>
   <h1>RDR2 Trapper Tracker</h1>
-
-  <!-- Garment Sets Section -->
+  
+  <!-- Garment Sets Section (Outfits) -->
   <div class="section">
     <h2>Garment Sets</h2>
     <ul>
-      <!-- Bear Hunter Set -->
+      <!-- 1. Bear Hunter Outfit -->
       <li>
         <label class="item-label">
-          <input type="checkbox">
-          <span>Bear Hunter Set</span>
+          <input type="checkbox"><span>Bear Hunter Outfit</span>
         </label>
         <button class="toggle-button" onclick="toggleElement('set_bear_hunter')">Ingredients Needed</button>
         <div id="set_bear_hunter" class="hidden details">
           <ul>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Bear Head Hat: 1× Legendary Bear Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Bear Head Hat: 1× Legendary Bear Pelt</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Bear Coat: 1× Legendary Bear Pelt, 1× Perfect Bison Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Bear Coat: 1× Legendary Bear Pelt, 1× Perfect Bison Pelt</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Bear Ropers: 1× Legendary Bear Pelt, 1× Perfect Bull Hide</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Bear Ropers: 1× Legendary Bear Pelt, 1× Perfect Bull Hide</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Boar Riding Gloves: 1× Perfect Boar Pelt, 2× Perfect Rabbit Pelts</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Boar Riding Gloves: 1× Perfect Boar Pelt, 2× Perfect Rabbit Pelts</span></label>
             </li>
           </ul>
         </div>
       </li>
       
-      <!-- Trophy Buck Set -->
+      <!-- 2. Trophy Buck Outfit -->
       <li>
         <label class="item-label">
-          <input type="checkbox">
-          <span>Trophy Buck Set</span>
+          <input type="checkbox"><span>Trophy Buck Outfit</span>
         </label>
         <button class="toggle-button" onclick="toggleElement('set_trophy_buck')">Ingredients Needed</button>
         <div id="set_trophy_buck" class="hidden details">
           <ul>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Raccoon Mountain Hat: 1× Perfect Raccoon Pelt, 1× Perfect Beaver Pelt, 2× Hawk Feathers</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Raccoon Mountain Hat: 1× Perfect Raccoon Pelt, 1× Perfect Beaver Pelt, 2× Hawk Feathers</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Buck Vest: 1× Legendary Buck Pelt, 1× Perfect Ram Hide</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Buck Vest: 1× Legendary Buck Pelt, 1× Perfect Ram Hide</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Fox Moccasins: 1× Perfect Elk Pelt, 1× Legendary Fox Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Fox Moccasins: 1× Perfect Elk Pelt, 1× Legendary Fox Pelt</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Buck and Fox Range Gloves: 1× Legendary Buck Pelt, 1× Legendary Fox Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Buck and Fox Range Gloves: 1× Legendary Buck Pelt, 1× Legendary Fox Pelt</span></label>
             </li>
           </ul>
         </div>
       </li>
       
-      <!-- Dreamcatcher Set -->
+      <!-- 3. Dreamcatcher Outfit -->
       <li>
         <label class="item-label">
-          <input type="checkbox">
-          <span>Dreamcatcher Set</span>
+          <input type="checkbox"><span>Dreamcatcher Outfit</span>
         </label>
         <button class="toggle-button" onclick="toggleElement('set_dreamcatcher')">Ingredients Needed</button>
         <div id="set_dreamcatcher" class="hidden details">
           <ul>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Beaver Flop Hat: 1× Legendary Beaver Pelt, 1× Legendary Boar Pelt, 1× Cardinal Feather</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Beaver Flop Hat: 1× Legendary Beaver Pelt, 1× Legendary Boar Pelt, 1× Cardinal Feather</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Bison Best: 1× Legendary Tatanka Bison Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Bison Best: 1× Legendary Tatanka Bison Pelt</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Bison Batwing Chaps: 1× Legendary Tatanka Bison Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Bison Batwing Chaps: 1× Legendary Tatanka Bison Pelt</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Boar and Bison Fowlers: 1× Legendary Boar Pelt, 1× Legendary Tatanka Bison Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Boar and Bison Fowlers: 1× Legendary Boar Pelt, 1× Legendary Tatanka Bison Pelt</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Beaver Cavalry Gloves: 1× Legendary Beaver Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Beaver Cavalry Gloves: 1× Legendary Beaver Pelt</span></label>
             </li>
           </ul>
         </div>
       </li>
       
-      <!-- Beast of Prey Set -->
+      <!-- 4. Beast of Prey Outfit -->
       <li>
         <label class="item-label">
-          <input type="checkbox">
-          <span>Beast of Prey Set</span>
+          <input type="checkbox"><span>Beast of Prey Outfit</span>
         </label>
         <button class="toggle-button" onclick="toggleElement('set_beast_prey')">Ingredients Needed</button>
         <div id="set_beast_prey" class="hidden details">
           <ul>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Cougar Flop Hat: 1× Legendary Cougar Pelt, 2× Turkey Feathers</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Cougar Flop Hat: 1× Legendary Cougar Pelt, 2× Turkey Feathers</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Cougar and Wolf Vest: 1× Legendary Cougar Pelt, 1× Legendary Wolf Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Cougar and Wolf Vest: 1× Legendary Cougar Pelt, 1× Legendary Wolf Pelt</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Wolf Batwing Chaps: 1× Legendary Wolf Pelt, 1× Perfect Goat Hide</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Wolf Batwing Chaps: 1× Legendary Wolf Pelt, 1× Perfect Goat Hide</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Bull Fowler Boots: 1× Perfect Boar Pelt, 1× Perfect Bull Hide</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Bull Fowler Boots: 1× Perfect Boar Pelt, 1× Perfect Bull Hide</span></label>
             </li>
             <li>
-              <label class="item-label">
-                <input type="checkbox">
-                <span>Legendary Cougar Riding Gloves: 1× Legendary Cougar Pelt, 1× Perfect Boar Pelt</span>
-              </label>
+              <label class="item-label"><input type="checkbox"><span>Legendary Cougar Riding Gloves: 1× Legendary Cougar Pelt, 1× Perfect Boar Pelt</span></label>
             </li>
           </ul>
         </div>
       </li>
       
-      <!-- Additional garment sets would follow a similar structure -->
+      <!-- 5. Huntsman Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Huntsman Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_huntsman')">Ingredients Needed</button>
+        <div id="set_huntsman" class="hidden details">
+          <ul>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Coyote Mountain Hat: 1× Legendary Coyote Pelt, 2× Eagle Feathers</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Pronghorn Coat: 1× Legendary Pronghorn Hide, 1× Perfect Moose Pelt</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Coyote Half Chaps: 1× Legendary Coyote Pelt, 2× Perfect Fox Pelts</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Workman's Pride Boots: 1× Perfect Cow Hide, 1× Perfect Goat Hide</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Pronghorn Range Gloves: 1× Legendary Pronghorn Hide, 1× Perfect Muskrat Pelt</span></label>
+            </li>
+          </ul>
+        </div>
+      </li>
       
+      <!-- 6. Death Roll Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Death Roll Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_death_roll')">Ingredients Needed</button>
+        <div id="set_death_roll" class="hidden details">
+          <ul>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Alligator Gambler's Hat: 1× Legendary Alligator Skin, 2× Perfect Snake Skins</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Panther Cloak: 1× Legendary Panther Pelt</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Alligator Vest: 1× Legendary Alligator Skin</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Alligator Fowler's: 1× Legendary Alligator Skin</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Panther Range Gloves: 1× Legendary Panther Pelt, 1× Perfect Gila Monster Skin</span></label>
+            </li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 7. Stalker Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Stalker Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_stalker')">Ingredients Needed</button>
+        <div id="set_stalker" class="hidden details">
+          <ul>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Ram Hat: 1× Legendary Ram Hide</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Moose Hunting Jacket: 1× Legendary Moose Pelt, 1× Perfect Wolf Pelt</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Ram Batwing Chaps: 1× Legendary Ram Hide</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Moose Moccasins: 1× Legendary Moose Pelt, 1× Perfect Cow Hide</span></label>
+            </li>
+            <li>
+              <label class="item-label"><input type="checkbox"><span>Legendary Ram Rifleman Gloves: 1× Legendary Ram Hide, 1× Perfect Boar Pelt</span></label>
+            </li>
+          </ul>
+        </div>
+      </li>
+      
+           <!-- 8. Ghost Bison Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Ghost Bison Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_ghost_bison')">Ingredients Needed</button>
+        <div id="set_ghost_bison" class="hidden details">
+          <ul>
+            <li>
+              <label class="item-label">
+                <input type="checkbox">
+                <span>Legendary White Bison Hat: 1× Legendary White Bison Pelt</span>
+              </label>
+            </li>
+            <li>
+              <label class="item-label">
+                <input type="checkbox">
+                <span>White Bison Coat: 1× Legendary White Bison Pelt</span>
+              </label>
+            </li>
+            <li>
+              <label class="item-label">
+                <input type="checkbox">
+                <span>Elk Half Chaps: 1× Perfect Elk Pelt</span>
+              </label>
+            </li>
+            <li>
+              <label class="item-label">
+                <input type="checkbox">
+                <span>Elk Moccasins: 1× Perfect Elk Pelt</span>
+              </label>
+            </li>
+            <li>
+              <label class="item-label">
+                <input type="checkbox">
+                <span>Elk Range Gloves: 1× Perfect Elk Pelt</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      
+      <!-- 9. Rattler Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Rattler Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_rattler')">Ingredients Needed</button>
+        <div id="set_rattler" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Ram Sombrero: 1× Perfect Ram Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Outdoorsman Vest: 1× Perfect Pronghorn Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Javelina Half-Caps: 1× Perfect Colored Peccary Pig Pelt, 1× Perfect Snakeskin</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Iguana Range Gloves: 1× Perfect Colored Peccary Pig Pelt, 1× Perfect Iguana Skin</span></label></li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 10. Wrangler Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Wrangler Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_wrangler')">Ingredients Needed</button>
+        <div id="set_wrangler" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Goat Flop Hat: 1× Perfect Pronghorn Hide, 1× Perfect Goat Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Trapper's Cloak: 1× Perfect Sheep Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>No Man's Vest: 1× Perfect Panther Pelt, 1× Perfect Goat Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Two-Toned Moccasins: 1× Perfect Buck Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Moose Range Gloves: 1× Perfect Moose Pelt</span></label></li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 11. Bronco Buster Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Bronco Buster Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_bronco_buster')">Ingredients Needed</button>
+        <div id="set_bronco_buster" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Elk Flop Hat: 1× Perfect Elk Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Coyote Scout Jacket: 1× Perfect Ox Hide, 1× Perfect Coyote Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Huntsman Vest: 1× Perfect Sheep Hide, 1× Perfect Deer Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Boar Fringe Shotgun Chaps: 2× Perfect Boar Pelts</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Pigskin Rifleman Gloves: 1× Perfect Pig Hide</span></label></li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 12. Marauder Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Marauder Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_marauder')">Ingredients Needed</button>
+        <div id="set_marauder" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Muskrat Cavalry Hat: 4× Perfect Rabbit Pelts, 1× Perfect Muskrat Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Principal Vest: 1× Perfect Cow Hide, 1× Perfect Deer Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Bull Fringed Shotgun Chaps: 1× Perfect Bull Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Snakeskin Cavalry Gloves: 1× Perfect Boar Pelt, 1× Perfect Snakeskin</span></label></li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 13. Bounty Hunter Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Bounty Hunter Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_bounty_hunter')">Ingredients Needed</button>
+        <div id="set_bounty_hunter" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Plantation Slough Cat: 1× Perfect Bison Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Beaver Hunting Jacket: 1× Perfect Cow Hide, 2× Perfect Beaver Pelts</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Sheepskin Vest: 2× Perfect Sheep Hides</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Pronghorn Half Chaps: 1× Perfect Pronghorn Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Buck Riding Gloves: 1× Perfect Buck Pelt</span></label></li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 14. Desperado Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Desperado Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_desperado')">Ingredients Needed</button>
+        <div id="set_desperado" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Beaver Drifter Hat: 2× Perfect Beaver Pelts</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Wolf Coat: 1× Perfect Ram Hide, 1× Perfect Wolf Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Billy Vest: 2× Perfect Armadillo Skins, 1× Perfect Goat Hide</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Boar and Bull Fowler Boots: 1× Perfect Ox Hide, 1× Perfect Boar Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Winter Cavalry Gloves: 1× Perfect Rabbit Pelt, 2× Perfect Muskrat Pelts</span></label></li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 15. Night Wrangler Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Night Wrangler Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_night_wrangler')">Ingredients Needed</button>
+        <div id="set_night_wrangler" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Coyote Gambler's Hat: 2× Perfect Coyote Pelts</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Cougar Cutaway Coat: 2× Perfect Cougar Pelts, 1× Perfect Black Bear Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Wilderness Vest: 1× Perfect Wolf Pelt, 1× Perfect Panther Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Moose Half Chaps: 1× Perfect Moose Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Badger Rifleman Gloves: 1× Perfect Badger Pelt</span></label></li>
+          </ul>
+        </div>
+      </li>
+      
+      <!-- 16. Mountain Man Outfit -->
+      <li>
+        <label class="item-label">
+          <input type="checkbox"><span>Mountain Man Outfit</span>
+        </label>
+        <button class="toggle-button" onclick="toggleElement('set_mountain_man')">Ingredients Needed</button>
+        <div id="set_mountain_man" class="hidden details">
+          <ul>
+            <li><label class="item-label"><input type="checkbox"><span>Grenadier Hat: 1× Perfect Muskrat Pelt, 1× Perfect Beaver Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Ram's Shotgun Coat: 2× Perfect Ram Hides</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Country Vest: 1× Perfect Buck Pelt, 1× Perfect Beaver Pelt</span></label></li>
+            <li><label class="item-label"><input type="checkbox"><span>Elk Riding Gloves: 1× Perfect Elk Pelt</span></label></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
-
+  
   <!-- Individual Clothing Items Section -->
   <div class="section">
     <h2>Individual Clothing Items</h2>
     
-    <!-- Hats Subcategory -->
+    <!-- Hats Subcategory (26 items) -->
     <button class="toggle-button" onclick="toggleElement('cat_hats')">Hats (26)</button>
     <div id="cat_hats" class="hidden">
       <ul>
+        <!-- 1. Badger Mountain Hat -->
         <li>
           <label class="item-label">
-            <input type="checkbox">
-            <span>Badger Mountain Hat</span>
+            <input type="checkbox"><span>Badger Mountain Hat</span>
           </label>
           <button class="toggle-button" onclick="toggleElement('hat_badger')">Ingredients Needed</button>
           <div id="hat_badger" class="hidden details">
             <ul>
-              <li>
-                <label class="item-label">
-                  <input type="checkbox">
-                  <span>1× Perfect Badger Pelt</span>
-                </label>
-              </li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Badger Pelt</span></label></li>
             </ul>
           </div>
         </li>
-        <!-- Example: Beaver Mountain Hat -->
+        <!-- 2. Beaver Mountain Hat -->
         <li>
           <label class="item-label">
-            <input type="checkbox">
-            <span>Beaver Mountain Hat</span>
+            <input type="checkbox"><span>Beaver Mountain Hat</span>
           </label>
           <button class="toggle-button" onclick="toggleElement('hat_beaver')">Ingredients Needed</button>
           <div id="hat_beaver" class="hidden details">
             <ul>
-              <li>
-                <label class="item-label">
-                  <input type="checkbox">
-                  <span>1× Perfect Beaver Pelt</span>
-                </label>
-              </li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Beaver Pelt</span></label></li>
             </ul>
           </div>
         </li>
-        <!-- ... Repeat similar structure for other hats ... -->
+        <!-- 3. Fox Mountain Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Fox Mountain Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_fox')">Ingredients Needed</button>
+          <div id="hat_fox" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Fox Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 4. Skunk Mountain Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Skunk Mountain Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_skunk')">Ingredients Needed</button>
+          <div id="hat_skunk" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Skunk Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 5. Bear Grenadier Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Bear Grenadier Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_bear_grenadier')">Ingredients Needed</button>
+          <div id="hat_bear_grenadier" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Black Bear Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 6. Squirrel Flat Cap -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Squirrel Flat Cap</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_squirrel')">Ingredients Needed</button>
+          <div id="hat_squirrel" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>6× Perfect Squirrel Pelts</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 7. Rat Flat Cap -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Rat Flat Cap</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_rat')">Ingredients Needed</button>
+          <div id="hat_rat" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>10× Perfect Rat Pelts</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 8. Snake Bulldogger Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Snake Bulldogger Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_snake')">Ingredients Needed</button>
+          <div id="hat_snake" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Sheep Hide</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Snake Skin</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 9. Iguana Big Valley Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Iguana Big Valley Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_iguana')">Ingredients Needed</button>
+          <div id="hat_iguana" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Cow Hide</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Iguana Skin</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 10. Gila Monster Gambler's Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Gila Monster Gambler's Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_gila')">Ingredients Needed</button>
+          <div id="hat_gila" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Elk Pelt</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Gila Monster Skin</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 11. Pronghorn Flop Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Pronghorn Flop Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_pronghorn')">Ingredients Needed</button>
+          <div id="hat_pronghorn" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Pronghorn Hide</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Opossum Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 12. Deer Cavalry Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Deer Cavalry Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_deer_cavalry')">Ingredients Needed</button>
+          <div id="hat_deer_cavalry" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Deer Pelt</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>10× Raven Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 13. Bison Gambler's Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Bison Gambler's Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_bison_gambler')">Ingredients Needed</button>
+          <div id="hat_bison_gambler" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Bison Pelt</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>4× Robin Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>4× Oriole Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 14. Rat Infantry Hardy Hat -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Rat Infantry Hardy Hat</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_rat_infantry')">Ingredients Needed</button>
+          <div id="hat_rat_infantry" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Goat Hide</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>6× Perfect Rat Pelts</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 15. Stalker Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Stalker Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_stalker_accessory')">Ingredients Needed</button>
+          <div id="hat_stalker_accessory" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>2× Loon Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Condor Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>3× Raven Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 16. Scavenger Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Scavenger Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_scavenger')">Ingredients Needed</button>
+          <div id="hat_scavenger" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Vulture Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Seagull Feather</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 17. Native Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Native Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_native')">Ingredients Needed</button>
+          <div id="hat_native" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Pheasant Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>4× Sparrow Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>3× Robin Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 18. Pilgrim Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Pilgrim Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_pilgrim')">Ingredients Needed</button>
+          <div id="hat_pilgrim" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Turkey Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Cedar Waxwing Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>3× Blue Jay Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 19. Huntsman Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Huntsman Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_huntsman')">Ingredients Needed</button>
+          <div id="hat_huntsman" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Boar Pelt</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Hawk Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Quail Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 20. Pioneer Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Pioneer Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_pioneer')">Ingredients Needed</button>
+          <div id="hat_pioneer" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>3× Turkey Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>3× Duck Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>3× Chicken Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 21. Rococo Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Rococo Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_rococo')">Ingredients Needed</button>
+          <div id="hat_rococo" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>2× Crow Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Cardinal Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 22. Glorious Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Glorious Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_glorious')">Ingredients Needed</button>
+          <div id="hat_glorious" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Oriole Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>4× Woodpecker Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 23. Pursuer Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Pursuer Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_pursuer')">Ingredients Needed</button>
+          <div id="hat_pursuer" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>2× Eagle Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Pigeon Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 24. Majestic Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Majestic Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_majestic')">Ingredients Needed</button>
+          <div id="hat_majestic" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>4× Rooster Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Woodpecker Feathers</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Songbird Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 25. Homestead Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Homestead Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_homestead')">Ingredients Needed</button>
+          <div id="hat_homestead" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Chicken Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Goose Feathers</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 26. Judicious Accessory -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Judicious Accessory</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('hat_judicious')">Ingredients Needed</button>
+          <div id="hat_judicious" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Pheasant Feather</span></label></li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Owl Feather</span></label></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
-
-    <!-- Vests Subcategory -->
+    
+    <!-- Vests Subcategory (3 items) -->
     <button class="toggle-button" onclick="toggleElement('cat_vests')">Vests (3)</button>
     <div id="cat_vests" class="hidden">
       <ul>
+        <!-- 1. Rugged Wrangler Vest -->
         <li>
           <label class="item-label">
-            <input type="checkbox">
-            <span>Rugged Wrangler Vest</span>
+            <input type="checkbox"><span>Rugged Wrangler Vest</span>
           </label>
           <button class="toggle-button" onclick="toggleElement('vest_rugged')">Ingredients Needed</button>
           <div id="vest_rugged" class="hidden details">
             <ul>
-              <li>
-                <label class="item-label">
-                  <input type="checkbox">
-                  <span>1× Perfect Pig Hide</span>
-                </label>
-              </li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Pig Hide</span></label></li>
             </ul>
           </div>
         </li>
-        <!-- ... Similar structure for Hinterland Vest and Rusted Vest ... -->
+        <!-- 2. Hinterland Vest -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Hinterland Vest</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('vest_hinterland')">Ingredients Needed</button>
+          <div id="vest_hinterland" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Ram Hide</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 3. Rusted Vest -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Rusted Vest</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('vest_rusted')">Ingredients Needed</button>
+          <div id="vest_rusted" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Cougar Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
     
-    <!-- Chaps Subcategory -->
+    <!-- Chaps Subcategory (9 items) -->
     <button class="toggle-button" onclick="toggleElement('cat_chaps')">Chaps (9)</button>
     <div id="cat_chaps" class="hidden">
       <ul>
+        <!-- 1. Bear Batwing Chaps -->
         <li>
           <label class="item-label">
-            <input type="checkbox">
-            <span>Bear Batwing Chaps</span>
+            <input type="checkbox"><span>Bear Batwing Chaps</span>
           </label>
           <button class="toggle-button" onclick="toggleElement('chaps_bear_batwing')">Ingredients Needed</button>
           <div id="chaps_bear_batwing" class="hidden details">
             <ul>
-              <li>
-                <label class="item-label">
-                  <input type="checkbox">
-                  <span>1× Perfect Bear Pelt</span>
-                </label>
-              </li>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Bear Pelt</span></label></li>
             </ul>
           </div>
         </li>
-        <!-- ... Other chaps items follow similar structure ... -->
+        <!-- 2. Ox Fringed Shotgun Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Ox Fringed Shotgun Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_ox')">Ingredients Needed</button>
+          <div id="chaps_ox" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Ox Hide</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 3. Elk Fringed Shotgun Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Elk Fringed Shotgun Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_elk')">Ingredients Needed</button>
+          <div id="chaps_elk" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Elk Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 4. Moose Batwing Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Moose Batwing Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_moose')">Ingredients Needed</button>
+          <div id="chaps_moose" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Moose Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 5. Deer Batwing Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Deer Batwing Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_deer')">Ingredients Needed</button>
+          <div id="chaps_deer" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Deer Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 6. Bear-fringed Shotgun Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Bear-fringed Shotgun Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_bear_shotgun')">Ingredients Needed</button>
+          <div id="chaps_bear_shotgun" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Black Bear Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 7. Sheep Batwing Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Sheep Batwing Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_sheep')">Ingredients Needed</button>
+          <div id="chaps_sheep" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>2× Perfect Sheep Hides</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 8. Muskrat Half Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Muskrat Half Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_muskrat')">Ingredients Needed</button>
+          <div id="chaps_muskrat" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>2× Perfect Muskrat Pelts</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 9. Deer Pelt Half Chaps -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Deer Pelt Half Chaps</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('chaps_deer_half')">Ingredients Needed</button>
+          <div id="chaps_deer_half" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Deer Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
     
-    <!-- Boots Subcategory -->
+    <!-- Boots Subcategory (3 items) -->
     <button class="toggle-button" onclick="toggleElement('cat_boots')">Boots (3)</button>
     <div id="cat_boots" class="hidden">
       <ul>
+        <!-- 1. Javelina Moccasins -->
         <li>
           <label class="item-label">
-            <input type="checkbox">
-            <span>Javelina Moccasins</span>
+            <input type="checkbox"><span>Javelina Moccasins</span>
           </label>
           <button class="toggle-button" onclick="toggleElement('boots_javelina')">Ingredients Needed</button>
           <div id="boots_javelina" class="hidden details">
             <ul>
-              <li>
-                <label class="item-label">
-                  <input type="checkbox">
-                  <span>2× Perfect Colored Peccary Pig Pelts</span>
-                </label>
-              </li>
+              <li><label class="item-label"><input type="checkbox"><span>2× Perfect Colored Peccary Pig Pelts</span></label></li>
             </ul>
           </div>
         </li>
-        <!-- ... Other boots items ... -->
+        <!-- 2. Skunk Trapper Boots -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Skunk Trapper Boots</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('boots_skunk')">Ingredients Needed</button>
+          <div id="boots_skunk" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>2× Perfect Skunk Pelts</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 3. Moccasins -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Moccasins</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('boots_moccasins')">Ingredients Needed</button>
+          <div id="boots_moccasins" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Buck Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
     
-    <!-- Saddles Subcategory -->
+    <!-- Saddles Subcategory (7 items) -->
     <button class="toggle-button" onclick="toggleElement('cat_saddles')">Saddles (7)</button>
     <div id="cat_saddles" class="hidden">
       <ul>
+        <!-- 1. Rattlesnake Vaquero Saddle -->
         <li>
           <label class="item-label">
-            <input type="checkbox">
-            <span>Rattlesnake Vaquero Saddle</span>
+            <input type="checkbox"><span>Rattlesnake Vaquero Saddle</span>
           </label>
           <button class="toggle-button" onclick="toggleElement('saddle_rattlesnake')">Ingredients Needed</button>
           <div id="saddle_rattlesnake" class="hidden details">
             <ul>
-              <li>
-                <label class="item-label">
-                  <input type="checkbox">
-                  <span>10× Perfect Snakeskins</span>
-                </label>
-              </li>
+              <li><label class="item-label"><input type="checkbox"><span>10× Perfect Snakeskins</span></label></li>
             </ul>
           </div>
         </li>
-        <!-- ... Other saddles items ... -->
+        <!-- 2. Cougar McClellan Saddle -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Cougar McClellan Saddle</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('saddle_cougar')">Ingredients Needed</button>
+          <div id="saddle_cougar" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Cougar Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 3. Boar Mother Hubbard Saddle -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Boar Mother Hubbard Saddle</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('saddle_boar')">Ingredients Needed</button>
+          <div id="saddle_boar" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Boar Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 4. Alligator Ranch Cutter Saddle -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Alligator Ranch Cutter Saddle</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('saddle_alligator')">Ingredients Needed</button>
+          <div id="saddle_alligator" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Alligator Skin</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 5. Bear Dakota Saddle -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Bear Dakota Saddle</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('saddle_bear')">Ingredients Needed</button>
+          <div id="saddle_bear" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Bear Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 6. Beaver Roping Saddle -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Beaver Roping Saddle</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('saddle_beaver')">Ingredients Needed</button>
+          <div id="saddle_beaver" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Beaver Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 7. Panther Trail Saddle -->
+        <li>
+          <label class="item-label">
+            <input type="checkbox"><span>Panther Trail Saddle</span>
+          </label>
+          <button class="toggle-button" onclick="toggleElement('saddle_panther')">Ingredients Needed</button>
+          <div id="saddle_panther" class="hidden details">
+            <ul>
+              <li><label class="item-label"><input type="checkbox"><span>1× Perfect Panther Pelt</span></label></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
     
