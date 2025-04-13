@@ -5,6 +5,8 @@
   <!-- Mobile optimization -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RDR2 Trapper Tracker</title>
+  <!-- Import Salsa font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Overall Colors */
@@ -15,13 +17,12 @@
       --section-bg: #222;            /* dark grey section background */
       --section-shadow: rgba(50, 205, 50, 0.3);  /* greenish shadow */
       
-      /* Blue Gradient Buttons with Black Text */
-      --button-bg: linear-gradient(45deg, #1E90FF, #00BFFF); 
-      --button-text: #000;        /* now black text on buttons */
+      /* Pronounced Blue Gradient Buttons with Black Text */
+      --button-bg: linear-gradient(45deg, #1565C0, #42A5F5); 
+      --button-text: #000;        /* black text on buttons */
       --button-border: #1C86EE;      /* dark blue border */
     }
     
-    /* Body styles */
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
@@ -68,11 +69,12 @@
       text-decoration: line-through;
     }
     
-    /* Smaller Blue gradient toggle buttons with black text */
+    /* Smaller Pronounced Blue Gradient Toggle Buttons with black text and Salsa font */
     .toggle-button {
       display: inline-block;
       background: var(--button-bg);
       color: var(--button-text);
+      font-family: 'Salsa', cursive;
       border: 1px solid var(--button-border);
       border-radius: 5px;
       padding: 6px 8px;
@@ -130,7 +132,7 @@
           <input type="checkbox">
           <span>Bear Hunter Set</span>
         </label>
-        <button class="toggle-button" onclick="toggleElement('set_bear_hunter')">Toggle Details</button>
+        <button class="toggle-button" onclick="toggleElement('set_bear_hunter')">Ingredients Needed</button>
         <div id="set_bear_hunter" class="hidden details">
           <ul>
             <li>
@@ -167,7 +169,7 @@
           <input type="checkbox">
           <span>Trophy Buck Set</span>
         </label>
-        <button class="toggle-button" onclick="toggleElement('set_trophy_buck')">Toggle Details</button>
+        <button class="toggle-button" onclick="toggleElement('set_trophy_buck')">Ingredients Needed</button>
         <div id="set_trophy_buck" class="hidden details">
           <ul>
             <li>
@@ -204,7 +206,7 @@
           <input type="checkbox">
           <span>Dreamcatcher Set</span>
         </label>
-        <button class="toggle-button" onclick="toggleElement('set_dreamcatcher')">Toggle Details</button>
+        <button class="toggle-button" onclick="toggleElement('set_dreamcatcher')">Ingredients Needed</button>
         <div id="set_dreamcatcher" class="hidden details">
           <ul>
             <li>
@@ -247,7 +249,7 @@
           <input type="checkbox">
           <span>Beast of Prey Set</span>
         </label>
-        <button class="toggle-button" onclick="toggleElement('set_beast_prey')">Toggle Details</button>
+        <button class="toggle-button" onclick="toggleElement('set_beast_prey')">Ingredients Needed</button>
         <div id="set_beast_prey" class="hidden details">
           <ul>
             <li>
@@ -302,7 +304,7 @@
             <input type="checkbox">
             <span>Badger Mountain Hat</span>
           </label>
-          <button class="toggle-button" onclick="toggleElement('hat_badger')">Toggle Details</button>
+          <button class="toggle-button" onclick="toggleElement('hat_badger')">Ingredients Needed</button>
           <div id="hat_badger" class="hidden details">
             <ul>
               <li>
@@ -320,7 +322,7 @@
             <input type="checkbox">
             <span>Beaver Mountain Hat</span>
           </label>
-          <button class="toggle-button" onclick="toggleElement('hat_beaver')">Toggle Details</button>
+          <button class="toggle-button" onclick="toggleElement('hat_beaver')">Ingredients Needed</button>
           <div id="hat_beaver" class="hidden details">
             <ul>
               <li>
@@ -333,6 +335,7 @@
           </div>
         </li>
         <!-- ... Repeat similar structure for other hats ... -->
+      
       </ul>
     </div>
 
@@ -345,7 +348,7 @@
             <input type="checkbox">
             <span>Rugged Wrangler Vest</span>
           </label>
-          <button class="toggle-button" onclick="toggleElement('vest_rugged')">Toggle Details</button>
+          <button class="toggle-button" onclick="toggleElement('vest_rugged')">Ingredients Needed</button>
           <div id="vest_rugged" class="hidden details">
             <ul>
               <li>
@@ -370,7 +373,7 @@
             <input type="checkbox">
             <span>Bear Batwing Chaps</span>
           </label>
-          <button class="toggle-button" onclick="toggleElement('chaps_bear_batwing')">Toggle Details</button>
+          <button class="toggle-button" onclick="toggleElement('chaps_bear_batwing')">Ingredients Needed</button>
           <div id="chaps_bear_batwing" class="hidden details">
             <ul>
               <li>
@@ -382,7 +385,7 @@
             </ul>
           </div>
         </li>
-        <!-- ... Other chaps items follow the same structure ... -->
+        <!-- ... Other chaps items follow similar structure ... -->
       </ul>
     </div>
     
@@ -395,7 +398,7 @@
             <input type="checkbox">
             <span>Javelina Moccasins</span>
           </label>
-          <button class="toggle-button" onclick="toggleElement('boots_javelina')">Toggle Details</button>
+          <button class="toggle-button" onclick="toggleElement('boots_javelina')">Ingredients Needed</button>
           <div id="boots_javelina" class="hidden details">
             <ul>
               <li>
@@ -420,7 +423,7 @@
             <input type="checkbox">
             <span>Rattlesnake Vaquero Saddle</span>
           </label>
-          <button class="toggle-button" onclick="toggleElement('saddle_rattlesnake')">Toggle Details</button>
+          <button class="toggle-button" onclick="toggleElement('saddle_rattlesnake')">Ingredients Needed</button>
           <div id="saddle_rattlesnake" class="hidden details">
             <ul>
               <li>
