@@ -1131,6 +1131,27 @@
     </div>
     
   </div>
-  
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        // use the label text as a unique key
+        const label = cb.nextElementSibling && cb.nextElementSibling.textContent.trim();
+        if (!label) return;
+        const key = 'rdr2_' + encodeURIComponent(label);
+
+        // restore state
+        if (localStorage.getItem(key) === 'true') {
+          cb.checked = true;
+        }
+
+        // save on change
+        cb.addEventListener('change', () => {
+          localStorage.setItem(key, cb.checked);
+        });
+      });
+    });
+  </script>
+
 </body>
-</html>
+</html>  
+
